@@ -82,7 +82,10 @@ div.ExperienceDiv {
 
 div#jeffPic {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
+    padding-top: 20%;
     height: 45%;
 }
 
