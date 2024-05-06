@@ -1,38 +1,50 @@
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+#index {
+    height: 100vh;
+    background: linear-gradient(to bottom right, blue 50%, red 50%);
+
+}
+
+#descriptionSection {
+    height: 100vh;
+    background: linear-gradient(to bottom right, red 50%, blue 50%);
+
+}
+
+  #about {
+    height: 100vh;
+    background: linear-gradient(to bottom right, blue 50%, red 50%);
+  }
+
+  #experience {
+    height: 120vh;
+    background: linear-gradient(to bottom right, red 50%, blue 50%);
+  }
+
+  #skills {
+    background: linear-gradient(to bottom right, blue 50%, red 50%);
+  }
+
+  #contact {
+    height: 100vh;
+    background: linear-gradient(to bottom right, red 50%, blue 50%);
+  }
+
 .MainBody {
     font-size: large;
-    background-image: url("images/background4.jpg");
-    background-size: 100% 150%;
-    height: 150%;
+    height: auto;
 }
 
-.mainNav {
-    display: flex;
-    position: fixed;
-    align-items: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10%;
-}
+.BlogBody {
+    font-size: large;
+    height: auto;
+    background: linear-gradient(to bottom right, blue 50%, red 50%);
 
-.mainNav a {
-    padding: 3%;
-    color: white;
-    text-decoration: none;
-    text-align:right;
-}
-
-.navItem {
-    padding: 2%;
-    text-align: center;
-}
-
-.mainNav a:hover {
-    text-decoration: underline;
-}
-
-div#name {
-    padding: 5%;
 }
 
 div#name h2 {
@@ -40,6 +52,12 @@ div#name h2 {
 }
 
 div#name h1 {
+    color: white;
+}
+
+div#jeffdescrip {
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
 }
 
@@ -53,6 +71,7 @@ p {
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .flex-item {
@@ -70,22 +89,26 @@ div#name {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 15%;
     width: 80%;
+    padding: 5%;
+    margin-bottom: 5%;
     
 }
 
-div.ExperienceDiv {
+.ExperienceDiv {
     font-size: x-large;
     color: white;
     background-color: rgb(0, 0, 0, 50%);
     padding: 2%;
+    margin-top: 5%;
 }
 
 div#jeffPic {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    height: 45%;
+    height: 65%;
 }
 
 div#imageChanger {
@@ -95,34 +118,39 @@ div#imageChanger {
 }
 
 p#par {
+    position: relative;
     padding: 3%;
     animation: 3s 1 alternate slidein;
 }
 
 @keyframes slidein {
     from {
+      position: relative;
       margin-left: 100%;
       width: 300%;
     }
   
     to {
+      position: relative;
       margin-left: 0%;
       width: 100%;
     }
   }
 
 .box {
+    position: relative;
     display: flex;
     justify-content: center;
-    height: 50%;
+    height: 35%;
     animation: 3s 1 alternate slidein;
 }
 
 .boxItem {
+    position: relative;
     text-align: center;
     background-color: rgb(0, 0, 0, 50%);
     width: 35%;
-    height: 50%;
+    height: auto;
 }
 
 .h3 {
@@ -131,4 +159,30 @@ p#par {
 
 .life-container {
     padding: 2%;
+}
+
+div#blog-posts {
+    background-color: #f5f5f5;
+    width: 70%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+    padding: 2%;
+}
+
+div#blog-container {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+#category {
+    width: 30%;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
