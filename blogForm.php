@@ -71,26 +71,28 @@ $authenticated = isset($_SESSION["authenticated"]) && $_SESSION["authenticated"]
 <body>
     <?php if ($authenticated): ?>
         <form action="insertToDb.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <div class="form-container">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
 
-            <label for="category">Category:</label>
-            <select id="category" name="category" required>
-                <option value="Technology">Technology</option>
-                <option value="Travel">Travel</option>
-                <option value="Food">Food</option>
-            </select>
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Technology">Technology</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Food">Food</option>
+                </select>
 
-            <label for="description">Description:</label>
-            <textarea id="description" name="info" required></textarea>
+                <label for="description">Description:</label>
+                <textarea id="description" name="info" required></textarea>
 
-            <label for="image">Image Link:</label>
-            <input type="text" id="image" name="imageLink" required>
+                <label for="image">Image Link:</label>
+                <input type="text" id="image" name="imageLink" required>
 
-            <input type="submit" value="Submit">
+                <input type="submit" value="Submit">
+            </div>
         </form> 
     <?php else: ?>
         <div class="filter-container">

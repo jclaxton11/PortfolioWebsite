@@ -13,7 +13,7 @@
         <div class="flex-container">
             <div class="flex-item">
                <h3>C#</h3> 
-               <img src="images/cImage.webp" alt="C#" width="232", height="130">
+               <img src="images/cImage.webp" alt="C#" width="200", height="200">
             </div>
             <div class="flex-item">
                 <h3>Java</h3> 

@@ -15,6 +15,9 @@ if (!isset($_SESSION)) {
         <?php 
             include("blogNavBar.html")
         ?>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
         <div id="name">
             <h2>Welcome To My Blog</h2>
         </div>

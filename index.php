@@ -17,8 +17,11 @@ if (!isset($_SESSION)) {
         <?php 
             include("navBar.html")
         ?>
-        
+
             <section id="index">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
             <div id="name">
                 <h2>Hello My Name Is</h2>
                 <h1>Jeffrey Claxton</h1>
@@ -39,7 +42,7 @@ if (!isset($_SESSION)) {
                 </div>
                 <div class="boxItem">
                     <p>.NET Development</p>
-                    <img src="images/cImage.webp" alt="C#" width="232", height="130">
+                    <img src="images/cImage.webp" alt="C#" width="180", height="180">
                 </div>
             </div>
             </section>
@@ -67,6 +70,5 @@ if (!isset($_SESSION)) {
                     include("contact.php")
                 ?>
             </section>
-       
     </body>
 </html>

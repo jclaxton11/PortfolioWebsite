@@ -1,49 +1,139 @@
+html {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
 section {
+    position: relative;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     width: 100%;
   }
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
 #index {
     height: 100vh;
-    background: linear-gradient(to bottom right, blue 50%, red 50%);
+    justify-content: center;
+    /* background: linear-gradient(315deg, rgba(101,0,94,1) 20%, blue 38%, rgba(48,238,226,1) 68%, red 88%);
+    animation: gradient 20s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed; */
+    /* background: linear-gradient(to bottom right, blue 50%, red 50%); */
 
 }
 
 #descriptionSection {
     height: 100vh;
-    background: linear-gradient(to bottom right, red 50%, blue 50%);
+    justify-content: center;
+    /* background: linear-gradient(315deg, rgba(101,0,94,1) 20%, blue 38%, rgba(48,238,226,1) 68%, red 88%);
+    animation: gradient 20s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed; */
+    /* background: linear-gradient(to bottom right, red 50%, blue 50%); */
 
 }
 
   #about {
     height: 100vh;
-    background: linear-gradient(to bottom right, blue 50%, red 50%);
+    justify-content: center;
+    /* background: linear-gradient(to bottom right, blue 50%, red 50%); */
   }
 
   #experience {
-    height: 120vh;
-    background: linear-gradient(to bottom right, red 50%, blue 50%);
+    height: 100vh;
+    justify-content: center;
+    /* background: linear-gradient(to bottom right, red 50%, blue 50%); */
   }
 
   #skills {
-    background: linear-gradient(to bottom right, blue 50%, red 50%);
+    height: 100vh;
+    justify-content: center;
+    /* background: linear-gradient(to bottom right, blue 50%, red 50%); */
   }
 
   #contact {
     height: 100vh;
-    background: linear-gradient(to bottom right, red 50%, blue 50%);
+    justify-content: center;
+    /* background: linear-gradient(to bottom right, red 50%, blue 50%); */
   }
 
 .MainBody {
     font-size: large;
     height: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, blue 38%, rgba(48,238,226,1) 68%, red 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
 }
 
 .BlogBody {
     font-size: large;
     height: auto;
-    background: linear-gradient(to bottom right, blue 50%, red 50%);
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, blue 38%, rgba(48,238,226,1) 68%, red 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    /* background: linear-gradient(to bottom right, blue 50%, red 50%); */
 
 }
 
@@ -57,12 +147,10 @@ div#name h1 {
 
 div#jeffdescrip {
     text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
 }
 
 p {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     color: white;
 }
@@ -86,11 +174,9 @@ p {
 
 div#name {
     display: block;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 15%;
     width: 80%;
     padding: 5%;
-    margin-bottom: 5%;
     
 }
 
@@ -98,8 +184,6 @@ div#name {
     font-size: x-large;
     color: white;
     background-color: rgb(0, 0, 0, 50%);
-    padding: 2%;
-    margin-top: 5%;
 }
 
 div#jeffPic {
@@ -185,4 +269,11 @@ div#blog-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2%;
 }
