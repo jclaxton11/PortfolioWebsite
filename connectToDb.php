@@ -1,8 +1,8 @@
 <?php
 $dbLocation = "localhost";
-$dbUsername = "id22116572_jeff";
+$dbUsername = "u323204828_7C45Q";
 $dbPassword = "2003Xr80$";
-$dbName = "id22116572_blogs";
+$dbName = "u323204828_UfXus";
 $db = mysqli_connect($dbLocation,
                      $dbUsername,
                      $dbPassword,

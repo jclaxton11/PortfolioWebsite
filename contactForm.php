@@ -4,15 +4,8 @@
     <title>Create Blog Post</title>
     <style>
         form {
-            max-width: 600px;
-            margin: 2%;
+            max-width: 800px;
             justify-content: center;
-        }
-        
-        .form-container {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
         }
 
         input[type="text"],
@@ -71,25 +64,25 @@
 </head>
 <body>
 
-    <form id="form" action="https://api.web3forms.com/submit" method="POST">
-        <div class="form-container">
-<!-- Replace with your Access Key -->
-    <input type="hidden" name="access_key" value="14909654-469c-40e0-87d9-6546172e3000">
+<form id="form" action="https://api.web3forms.com/submit" method="POST">
+    <div class="form-container">
+    <!-- Replace with your Access Key -->
+        <input type="hidden" name="access_key" value="14909654-469c-40e0-87d9-6546172e3000">
 
-    <!-- Form Inputs. Each input must have a name="" attribute -->
-    <label>Name:</label>
-    <input type="text" name="name" required>
-    <label>Email:</label>
-    <input type="email" name="email" required>
-    <label>Message:</label>
-    <textarea name="message" required></textarea>
+        <!-- Form Inputs. Each input must have a name="" attribute -->
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Message:</label>
+        <textarea name="message" required></textarea>
 
-    <!-- hCaptcha Spam Protection -->
-    <div class="h-captcha" data-captcha="true"></div>
+        <!-- hCaptcha Spam Protection -->
+        <div class="h-captcha" data-captcha="true"></div>
 
-    <input type="submit"></input>
-</div>
-    </form>
+        <input type="submit"></input>
+    </div>
+</form>
 
 <!-- Required for hCaptcha -->
 <script src="https://web3forms.com/client/script.js" async defer></script>

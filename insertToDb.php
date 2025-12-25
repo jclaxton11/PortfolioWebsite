@@ -6,19 +6,13 @@ include("connectToDb.php");
 // }
 // else
 // {
+
 $date = date("Y-m-d H:i:s");
-$query = "INSERT INTO BlogPosts(
-    Name, Title, Info, Category, ImageLink, DateAdded
-)
-VALUES (
-    '$_POST[name]',
-    '$_POST[title]',
-    '$_POST[info]',
-    '$_POST[category]', 
-    '$_POST[imageLink]',
-    '$date'
-);";
-$success = mysqli_query($db, $query);
+$info = nl2br($_POST['info']);
+$stmt = $db->prepare("INSERT INTO BlogPosts (Name, Title, Info, Category, ImageLink, DateAdded) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssss", $_POST['name'], $_POST['title'], $info, $_POST['category'], $_POST['imageLink'], $date);
+$success = $stmt->execute();
+$stmt->close();
 mysqli_close($db);
 //redirects to desired page
 header('Location: blog.php');

@@ -36,7 +36,7 @@
                 <img src="images/phplogo.png" alt="PHP" width="200", height="200">
              </div>
              <div class="flex-item">
-                <h3>JavaScript</h3> 
+                <h3>JavaScript/Typescript</h3> 
                 <img src="images/jslogo.png" alt="JS" width="200", height="200">
              </div>
         </div>

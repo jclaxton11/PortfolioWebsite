@@ -10,8 +10,10 @@
         <div id="name">
             <h2>Contact Me</h2>
         </div>
+        <div class="contact-form">
         <?php 
             include("contactForm.php")
         ?>
+        </div>
     </body>
 

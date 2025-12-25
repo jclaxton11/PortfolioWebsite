@@ -186,6 +186,13 @@ div#name {
     background-color: rgb(0, 0, 0, 50%);
 }
 
+.projectsDiv {
+    margin-top: 4%;
+    font-size: x-large;
+    color: white;
+    background-color: rgb(0, 0, 0, 50%);
+}
+
 div#jeffPic {
     position: relative;
     display: flex;
@@ -276,4 +283,10 @@ div#blog-container {
     justify-content: center;
     flex-direction: column;
     margin: 2%;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

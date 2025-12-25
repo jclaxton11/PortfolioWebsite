@@ -59,6 +59,12 @@ if (!isset($_SESSION)) {
                 ?>
             </section>
 
+            <section id="projects">
+                <?php 
+                    include("projects.php")
+                ?>
+            </section>
+
             <section id="skills">
                 <?php 
                     include("skills.php")

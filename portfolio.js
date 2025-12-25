@@ -75,6 +75,10 @@ var imageArray = new Array(3);
 for (i=0; i<imageArray.length; i++)
     imageArray[i] = prefix + (i+1) + ".jpg";
 
+var appImageArray = new Array(3);
+for (i=0; i<appImageArray.length; i++) {
+    appImageArray[i] = "images/mindcircuit" + (i+1) + ".png";
+}
 //Perform a "cicular rotation" of the images in the array
 var imageCounter = 0;
 function rotate()
@@ -85,12 +89,28 @@ function rotate()
     if (imageCounter == 3) imageCounter = 0;
 }
 
+var appImageCounter = 0;
+function appRotate()
+{
+    var appImageObject = document.getElementById('appPlaceholder');
+    appImageObject.src = appImageArray[appImageCounter];
+    ++appImageCounter;
+    if (appImageCounter == 3) appImageCounter = 0;
+}
+
+function startMindCircuitRotation()
+{
+    document.getElementById('appPlaceholder').src=appImageArray[2];
+    setInterval('appRotate()', 3000);
+}
 //Called as soon as home page has loaded, to start image rotation
 function startImageRotation()
 {
     document.getElementById('placeholder').src=imageArray[2];
     setInterval('rotate()', 3000);
 }
+
+
 
 // function scroll() {
 //     const options = {
