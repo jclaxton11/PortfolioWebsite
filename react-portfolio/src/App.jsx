@@ -8,7 +8,6 @@ import Projects from './components/Projects.jsx';
 import Skills from './components/Skills.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
-import WaveBackground from './components/Wave.jsx';
 
 export default function App() {
   const [aboutIndex, setAboutIndex] = useState(0);
@@ -16,11 +15,11 @@ export default function App() {
 
   useEffect(() => {
     const aboutTimer = setInterval(() => {
-      setAboutIndex((current) => (current + 1) % aboutImages.length);
+      setAboutIndex((c) => (c + 1) % aboutImages.length);
     }, 3000);
 
     const appTimer = setInterval(() => {
-      setAppIndex((current) => (current + 1) % appImages.length);
+      setAppIndex((c) => (c + 1) % appImages.length);
     }, 3000);
 
     return () => {
@@ -29,18 +28,41 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    const revealEls = document.querySelectorAll('.reveal');
+    revealEls.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="app">
       <Header />
       <main>
         <Hero />
+        <div className="section-divider" />
         <About aboutIndex={aboutIndex} />
+        <div className="section-divider" />
         <Experience />
+        <div className="section-divider" />
         <Projects appIndex={appIndex} />
+        <div className="section-divider" />
         <Skills />
+        <div className="section-divider" />
         <Contact />
       </main>
-      <WaveBackground />
       <Footer />
     </div>
   );

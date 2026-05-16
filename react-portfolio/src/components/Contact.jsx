@@ -2,12 +2,7 @@ import { useEffect } from 'react';
 
 export default function Contact() {
   useEffect(() => {
-    const existingScript = document.querySelector(
-      'script[src="https://web3forms.com/client/script.js"]'
-    );
-    if (existingScript) {
-      return;
-    }
+    if (document.querySelector('script[src="https://web3forms.com/client/script.js"]')) return;
     const script = document.createElement('script');
     script.src = 'https://web3forms.com/client/script.js';
     script.async = true;
@@ -16,30 +11,38 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="contact">
-      <div className="section-heading">
-        <h2>Contact</h2>
-        <p>Have a project or collaboration in mind? Let’s connect.</p>
+    <section id="contact">
+      <div className="section-heading reveal">
+        <span className="mono-label">06 — Contact</span>
+        <h2>Get in touch.</h2>
       </div>
-      <div className="contact-grid">
-        <div className="contact-card">
-          <h3>Direct</h3>
-          <p>Based in Lincoln, Nebraska.</p>
-          <p>Open to proposals, freelance projects, and app collaborations.</p>
-          <div className="contact-meta">
-            <a href="https://www.linkedin.com/in/jeffrey-claxton-0aab4621a/">LinkedIn</a>
+
+      <div className="contact-layout">
+        <div className="contact-info reveal">
+          <h3>Let's talk.</h3>
+          <p>
+            Based in Lincoln, Nebraska. Open to project collaborations,
+            freelance work, and good conversations about software.
+          </p>
+          <div className="contact-links">
+            <a
+              className="contact-link"
+              href="https://www.linkedin.com/in/jeffrey-claxton-0aab4621a/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ↗ LinkedIn
+            </a>
           </div>
         </div>
+
         <form
-          className="contact-form"
+          className="contact-form reveal delay-1"
           action="https://api.web3forms.com/submit"
           method="POST"
         >
-          <input
-            type="hidden"
-            name="access_key"
-            value="14909654-469c-40e0-87d9-6546172e3000"
-          />
+          <input type="hidden" name="access_key" value="14909654-469c-40e0-87d9-6546172e3000" />
+
           <label>
             Name
             <input name="name" type="text" placeholder="Your name" required />
@@ -50,17 +53,11 @@ export default function Contact() {
           </label>
           <label>
             Message
-            <textarea
-              name="message"
-              rows="4"
-              placeholder="Tell me about your project"
-              required
-            />
+            <textarea name="message" rows="4" placeholder="What's on your mind?" required />
           </label>
-          <div className="h-captcha" data-captcha="true"></div>
-          <button className="primary-btn" type="submit">
-            Send message
-          </button>
+
+          <div className="h-captcha" data-captcha="true" />
+          <button className="btn-primary" type="submit">Send message</button>
         </form>
       </div>
     </section>

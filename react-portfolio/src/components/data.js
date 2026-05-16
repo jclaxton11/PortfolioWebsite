@@ -5,70 +5,62 @@ export const aboutImages = [
   '/images/imageSlide3.jpg',
 ];
 
-// Legacy (keep if your UI references these)
 export const appImages = [
   '/images/mindcircuit1.png',
   '/images/mindcircuit2.png',
   '/images/mindcircuit3.png',
 ];
 
-// New: Thawe screenshots
 export const thaweImages = [
-  '/images/thawe1.png'
-];
-
-// New: Events / scraper visuals (optional)
-export const eventsImages = [
-  '/images/events1.png',
-  '/images/events2.png',
-  '/images/events3.png',
+  '/images/thawe1.png',
 ];
 
 // Skills
 export const skills = [
-  // Languages
-  { name: 'TypeScript', icon: '/images/tslogo.png' },
-  { name: 'JavaScript', icon: '/images/jslogo.png' },
-  { name: 'Python', icon: '/images/pythonImage.png' },
-  { name: 'Swift', icon: '/images/swiftImage.png' },
-  { name: 'C#', icon: '/images/cImage.webp' },
-  { name: 'SQL', icon: '/images/SQL.png' },
-
-  // Frontend
-  { name: 'React', icon: '/images/react.png' },
+  { name: 'TypeScript',    icon: '/images/tslogo.png' },
+  { name: 'JavaScript',   icon: '/images/jslogo.png' },
+  { name: 'Python',       icon: '/images/pythonImage.png' },
+  { name: 'Swift',        icon: '/images/swiftImage.png' },
+  { name: 'C#',           icon: '/images/cImage.webp' },
+  { name: 'SQL',          icon: '/images/SQL.png' },
+  { name: 'React',        icon: '/images/react.png' },
   { name: 'React Native', icon: '/images/react.png' },
-  { name: 'HTML/CSS', icon: '/images/htmlimage.png' },
-
-  // Backend
-  { name: 'Node.js', icon: '/images/node.png' },
+  { name: 'HTML/CSS',     icon: '/images/htmlimage.png' },
+  { name: 'Node.js',      icon: '/images/node.png' },
 ];
 
 // Experience
 export const experiences = [
   {
-    title: 'Software Engineer — Crete Carrier',
+    role: 'Software Engineer',
+    company: 'Crete Carrier',
+    period: '2025 — Present',
     bullets: [
-      'Develop and maintain internal web applications that support core logistics and transportation operations.',
+      'Develop and maintain internal web applications supporting core logistics and transportation operations.',
       'Build and integrate backend services and APIs for shipment status updates, freight tendering, and bid workflows.',
-      'Work on integrations with external providers, to exchange logistic data.',
+      'Work on integrations with external providers to exchange logistics data.',
       'Transform and map complex external payloads into internal shipment and stop models with an emphasis on accuracy and traceability.',
       'Collaborate with product owners and engineers to deliver reliable features used in daily production environments.',
     ],
   },
   {
-    title: 'Software Engineering Intern — Buildertrend',
+    role: 'Software Engineering Intern',
+    company: 'Buildertrend',
+    period: '2024',
     bullets: [
-      'Remade a job proposal templates feature, improving UI/UX and increasing template customizability for contractors.',
-      'Implemented templating using Handlebars.js and shipped iterative improvements through an Agile intern pod with a senior dev coach.',
+      'Redesigned the job proposal templates feature, improving usability and increasing customizability for contractors.',
+      'Implemented templating with Handlebars.js; shipped iterative improvements through an Agile intern pod with a senior dev coach.',
       'Completed a two-week bootcamp covering C#, React + TypeScript, and SQL Server.',
     ],
   },
   {
-    title: 'iOS Development Intern — Brain Institute of America',
+    role: 'iOS Development Intern',
+    company: 'Brain Institute of America',
+    period: '2024',
     bullets: [
-      'Led the product lifecycle from planning to App Store release using SwiftUI, Core Data, and Firebase.',
-      'Built a cognitive training app with daily activities, scoring, and progress tracking for both patients and general users.',
-      'Worked closely with clinical stakeholders and communicated progress using Agile rituals.',
+      'Led the full product lifecycle from planning to App Store release using SwiftUI, Core Data, and Firebase.',
+      'Built a cognitive training app with daily challenges, scoring, and progress tracking for patients and general users.',
+      'Worked closely with clinical stakeholders using Agile rituals to communicate progress.',
     ],
   },
 ];
@@ -76,60 +68,74 @@ export const experiences = [
 // Projects
 export const projects = [
   {
-    title: 'Thawe — Swipe-Style Professional Networking App',
+    id: 'surveyops',
+    featured: true,
+    title: 'SurveyOps — Land Surveying Job Management',
     description:
-      'Mobile app for real human professional networking with smart matching, messaging, and event discovery—built to avoid spammy “AI-feed” networking.',
-    details: [
-      'React Native (Expo) frontend with Firebase Auth + push notifications (FCM/APNs).',
-      'Django + PostgreSQL/PostGIS backend; location-based discovery and advanced filtering.',
-      'Deployed services on Google Cloud Run with Cloud Build / CI pipelines.',
+      'A cloud-based job management platform built specifically for land surveying firms. Consolidates job tracking, crew coordination, and deliverable management into one system — built independently in spare time.',
+    bullets: [
+      'Native PLSS (Public Land Survey System) tracking with map views and satellite overlays for location intelligence.',
+      'Mobile-first crew dispatching with real-time field updates and mandatory checklists.',
+      'Centralized deliverables management for field notes, DWGs, and PDFs with QA approval workflows.',
+      'Multi-tenant architecture with role-based access, scaling from solo surveyors to multi-crew operations.',
     ],
-    linkLabel: 'Visit thaweapp.com',
-    link: 'https://thaweapp.com',
+    tags: ['Side Project', 'iOS', 'Web'],
+    links: [
+      { label: 'survey-ops.com', href: 'https://survey-ops.com' },
+      { label: 'App Store', href: 'https://apps.apple.com/us/app/surveyops-field-management/id6764725671' },
+    ],
+    images: ['/images/surveyopsmobile.png'],
+  },
+  {
+    id: 'thawe',
+    title: 'Thawe — Professional Networking App',
+    description:
+      'Mobile app for genuine professional networking with smart matching, messaging, and event discovery. Built to cut through the noise of feed-based platforms.',
+    bullets: [
+      'React Native (Expo) frontend with Firebase Auth and push notifications (FCM/APNs).',
+      'Django + PostgreSQL/PostGIS backend with location-based discovery and advanced filtering.',
+      'Deployed on Google Cloud Run with Cloud Build CI pipelines.',
+    ],
+    tags: ['React Native', 'Django', 'PostgreSQL', 'Firebase', 'GCP'],
+    links: [{ label: 'thaweapp.com', href: 'https://thaweapp.com' }],
     images: thaweImages,
   },
   {
-    title: 'Events Scraper Microservice (Thawe)',
-    description:
-      'Automated event ingestion pipeline that scrapes conference/meetup sources and converts messy pages into structured, geocoded event data.',
-    details: [
-      'Node.js + Playwright scraping with structured extraction for consistent event schemas.',
-      'Geocoding + normalization pipeline; batch writes into a database for the Events tab.',
-      'Deployed as a scheduled/triggered service on Google Cloud Run.',
-    ],
-    images: eventsImages,
-  },
-  {
+    id: 'gofish',
     title: 'Real-Time Multiplayer Go Fish',
     description:
-      'A real-time multiplayer card game with matchmaking and persistent state—built with WebSockets and a scalable backend.',
-    details: [
+      'A real-time multiplayer card game with matchmaking and persistent state built on WebSockets.',
+    bullets: [
       'React frontend + Node.js WebSocket server.',
-      'Redis for session/state coordination; PostgreSQL for persistence.',
+      'Redis for session and state coordination; PostgreSQL for persistence.',
       'Focused on reconnection handling, game-state integrity, and latency-friendly updates.',
     ],
+    tags: ['React', 'Node.js', 'WebSockets', 'Redis', 'PostgreSQL'],
   },
   {
+    id: 'intelliboost',
     title: 'IntelliBoost — Brain Training (iOS)',
     description:
-      'iOS app focused on cognitive exercise with daily challenges, scoring, and progress tracking.',
-    details: [
-      'SwiftUI app with multiple games/trackers and category-based progress visualization.',
+      'iOS cognitive training app with daily challenges, scoring, and progress tracking — built for both general users and neuro-rehab use cases.',
+    bullets: [
+      'SwiftUI with multiple mini-games and category-based progress visualization.',
       'Firebase-backed user accounts and cross-game scoring data.',
-      'Designed for accessibility and neuro-rehab use cases.',
     ],
-    linkLabel: 'View on the App Store',
+    tags: ['Swift', 'SwiftUI', 'Firebase', 'Core Data'],
+    linkLabel: 'View on App Store',
     link: 'https://apps.apple.com/us/app/mindcircuit/id6497651074',
     images: appImages,
   },
   {
+    id: 'wetland',
     title: 'USDA-NRCS Wetland Delineation Tool',
     description:
-      'WPF desktop tool that automates wetland determination paperwork and PDF generation.',
-    details: [
-      'Development manager for a 5-person capstone team.',
-      'Automated templated document creation and PDF consolidation.',
-      'Coordinated priorities in ZenHub to ship on schedule.',
+      'WPF desktop tool that automates wetland determination paperwork and PDF generation for NRCS field staff.',
+    bullets: [
+      'Development manager for a 5-person senior capstone team.',
+      'Automated templated document creation and PDF consolidation pipelines.',
+      'Tracked priorities in ZenHub to ship on schedule.',
     ],
+    tags: ['.NET', 'WPF', 'C#'],
   },
 ];
